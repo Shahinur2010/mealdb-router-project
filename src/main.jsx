@@ -22,19 +22,19 @@ const router = createBrowserRouter([
         element: <Main/>
       },
       {
-        path: '/restaurant',
+        path: 'restaurant',
         element: <Restuarent></Restuarent>,
         loader: () => fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
       },
       {
         path: '/meal/:mealId',
         element: <MealDetail></MealDetail>,
-        loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=a/${params.mealId}`)
+        loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=/${params.mealId}`)
       },
-      // {
-      //   path: '*',
-      //   element: <Error></Error>
-      // }
+      {
+        path: '*',
+        element: <Error></Error>
+      }
     ]
   },
 ]);
