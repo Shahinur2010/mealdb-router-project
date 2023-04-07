@@ -3,8 +3,8 @@ import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 
 const MealDetail = () => {
     const meal = useLoaderData();
-    console.log(meal)
-    const {strArea, strCategory, strMealThumb, strTags, idMeal} = meal;
+    console.log(meal.meals[0])
+    const {strArea, strCategory, strMealThumb, strTags, idMeal} = meal.meals[0];
     const navigate = useNavigate();
 
 const handleGoBack = () => {
